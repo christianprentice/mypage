@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+        nav { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #ccc; }
+        nav a { margin-right: 1rem; font-weight: bold; text-decoration: none; color: #0070f3; }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <nav>
+        {{ range .AllTranslations }}
+            <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
+    </nav>
+
+    <main>
+        {{ .Content }}
+    </main>
+</body>
+</html>
