@@ -1,15 +1,41 @@
-baseURL = "https://mypage-f4j.pages.dev/"
-title = "My Resume PoC"
+baseURL = "https://flyingkiwi.xyz/"
+title = "My Resume"
+theme = "PaperMod"
 
-# Force the default language into the /en/ subdirectory
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
-# Define your supported languages
+[params]
+  defaultTheme = "auto"
+  ShowThemeToggle = true
+
 [languages]
   [languages.en]
-    languageName = "English"
+    label = "English"
     weight = 1
+
+    # English Top Navigation
+    [[languages.en.menu.main]]
+      name = "Resume"
+      url = "/en/resume/"
+      weight = 1
+
+    [languages.en.params.profileMode]
+      enabled = true
+      title = "Hi, I'm Christian"
+      subtitle = "Cloud Native Engineer"
+
   [languages.jp]
-    languageName = "日本語"
+    label = "日本語"
     weight = 2
+
+    # Japanese Top Navigation
+    [[languages.jp.menu.main]]
+      name = "履歴書"
+      url = "/jp/resume/"
+      weight = 1
+
+    [languages.jp.params.profileMode]
+      enabled = true
+      title = "プリンティス　太朗"
+      subtitle = "インフラエンジニア"
