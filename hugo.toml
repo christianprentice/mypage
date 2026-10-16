@@ -23,7 +23,7 @@ defaultContentLanguageInSubdir = true
     [languages.en.params.profileMode]
       enabled = true
       title = "Hi, I'm Christian"
-      subtitle = "Cloud Native Engineer"
+      subtitle = "Infrastructure Engineer"
 
   [languages.jp]
     label = "日本語"

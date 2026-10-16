@@ -3,38 +3,43 @@ title: "プリンティス 太朗 — インフラエンジニア"
 ---
 
 # プリンティス 太朗
-**インフラエンジニア — Linux / Ansible / Kubernetes** · 福岡
+**インフラエンジニア — Linux / Ansible / Kubernetes** · 福岡 (JST) ・リモート可
 
 ## 職務要約
-オンプレミス仮想化基盤（VMware vSphere / RHEL）の運用保守に従事する
-インフラエンジニアです。資料の乏しい環境でも既存システムを自律的に解析し、
-スクリプトや IaC で定常作業を自動化してきました。前職では自作 GAS ツールで
-1 日約 1 時間の工数削減を実現。個人環境では Ansible によるプロビジョニング、
-GitOps による構成管理、systemd を活用した運用自動化を実践しています。
+電力系・仮想化基盤（物理約15台 / 仮想約400台）の運用保守をチームで担当する
+インフラエンジニアです。引き継ぎ資料が少ない環境で既存システムを読み解き、
+文書化した上で定常作業をスクリプト化することを得意としています。
+商用経験は VMware / RHEL 運用が中心ですが、Kubernetes は CKAD 等の資格取得と
+個人環境でのクラスタ検証を通じて、モダン環境へ即座に適応できる下地を構築しています。SLA ありの QA / 運用と
+翻訳・通訳の経験があり、非同期の文書コミュニケーションに慣れています。
+
+## 活かせるスキル
+- OS / 仮想化： RHEL、vSphere、Windows、Solaris（運用）
+- 自動化 / IaC： Ansible（個人＋個人環境）、PowerShell、GAS、systemd タイマー
+- コンテナ / GitOps： Kubernetes（CKAD、個人環境）、Git
+- データ / 可観測性： rsyslog → MariaDB（設計補助）、容量試算
+- 実務： 影響調査、運用文書化、SLA 運用、英語での非同期報告
 
 ## 職務経歴
 
 ### ALH株式会社 — インフラエンジニア（2026年4月〜現在）
 電力系・仮想化基盤（物理約15台 / 仮想約400台）の運用保守。
-- vSphere / RHEL / Solaris / Windows 環境の運用保守。
-- 引き継ぎ資料がほぼない中で、ミドルウェアのメジャーアップデート
-  （ESET 等）に伴う影響調査を自走して完遂。
-- ログ蓄積基盤の設計支援：rsyslog の MariaDB 出力設定（ストレージ容量設計
-  を含む）および DB 設計。
-- 定例データ更新作業を PowerShell スクリプトで自動化。
-- dnf 自動アップデートや systemd タイマーを活用した運用自動化を立案。
+- vSphere / RHEL / Solaris / Windows 環境の運用保守（チーム対応）。
+- ミドルウェアのメジャーアップデート（ESET 等）に伴う影響調査・手順実施
+  （レビュー承認のもと、引き継ぎ資料が限られる中で対応）。
+- ログ蓄積基盤の設計補助：rsyslog の MariaDB 出力設定案・容量試算・テーブル案を作成
+  （上長レビュー承認）。
+- 定例データ更新作業を PowerShell スクリプトで自動化し、ヒューマンエラーの防止と手作業の削減を実現。
 
-### アデコ株式会社 — メンバー（2022年2月〜2025年11月）
-- **LLM 安全性評価**：リリース前モデルおよびデプロイ済み AI サービスの
-  安全性・応答精度テスト、エスカレーション内容のフィードバック。
-- **業務自動化**：GAS で入力テンプレート化・送信履歴記録スクリプトを自主開発し、
-  1 日約 1 時間の工数削減を達成。
-- **コンテンツ審査・市場調査**：動画コンテンツの審査（SLA 保持）、
-  英語でのトレンド調査報告書を作成し海外顧客へ提出。
+### アデコ株式会社 — 運用 / QA サポート（2022年2月〜2025年11月）
+- LLM 安全性評価および動画コンテンツ審査（SLA 保持）、英語トレンド報告書を
+  海外顧客向けに作成（非同期）。
+- GAS で入力テンプレート化・送信履歴記録を開発し、自身の業務で1日約1時間の
+  工数削減（小規模チーム）。
 
 ### 株式会社フィールズジャパン — プログラマー（2020年6月〜9月）
-WordPress / Linux による EC サイト保守運用。運用マニュアルが存在しなかったため、
-プラグイン・更新手順書を新規作成し、引き継ぎ時間を約 8 時間から約 1 時間に短縮。
+小規模チームで WordPress / Linux による EC サイト保守運用。運用マニュアルが
+存在しなかったため手順書を新規作成し、新任者への引き継ぎを約8時間から約1時間に短縮。
 
 ### その他
 小売店舗運営、製造ライン等。詳細はお問い合わせください。
@@ -43,21 +48,20 @@ WordPress / Linux による EC サイト保守運用。運用マニュアルが�
 
 ### [workstation-bootstrap-ansible](https://codeberg.org/christianprentice/workstation-bootstrap-ansible)
 最小構成の RHEL 系 Linux から個人ワークステーションを立ち上げる Ansible
-ロール集。システムパッケージ、Rust / Go ツールチェイン、chezmoi 管理の
-dotfiles、ファームウェア更新＋リブートまでを冪等・タグ分割実行で自動化。
-実務でも追求している「手作業ゼロ」の思想そのままのプロジェクトです。
+ロール集（パッケージ、Rust / Go、chezmoi 管理 dotfiles、FW更新＋リブート）。
+冪等・タグ分割実行。実務での自動化習慣を個人環境で検証しているものです。
 
 その他の実験（自作 Fedora イメージ、KVM スナップショット管理、Zig / Rust）は
 [Codeberg プロフィール](https://codeberg.org/christianprentice/)をご覧ください。
 
 ## 資格
-CKAD · KCNA · KCSA · LFCS · LFCA · RHCSA · Red Hat OpenShift ×2 ·
+CKAD · KCNA · KCSA · LFCS · RHCSA · Red Hat OpenShift ×2 ·
 Red Hat Cloud-native Developer · AWS Cloud Practitioner · AWS AI Practitioner ·
-Terraform Associate (004) · Git SC102 · 実用英語技能検定 準1級
+Terraform Associate (004)
 
 資格の詳細：[Credly](https://www.credly.com/users/christiantaroprentice/badges/credly)
 
 ## 言語・リンク
-- 日本語（母語） · 英語（ビジネス — フリーランス翻訳者として約4年の実務経験）
+- 日英バイリンガル — 翻訳・通訳＋言語評価者（LLM安全性評価、海外顧客向け英語報告、非同期対応）
 - コード： [Codeberg](https://codeberg.org/christianprentice/)
 - 資格： [Credly](https://www.credly.com/users/christiantaroprentice/badges/credly)
