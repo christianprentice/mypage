@@ -1,5 +1,6 @@
 ---
 title: "プリンティス 太朗 — インフラエンジニア"
+description: "インフラエンジニア — Linux / Ansible / Kubernetes · 福岡 (JST) ・リモート可"
 ---
 
 # プリンティス 太朗

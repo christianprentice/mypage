@@ -1,5 +1,6 @@
 ---
 title: "Christian Prentice — Infrastructure Engineer"
+description: "Infrastructure Engineer — Linux / Ansible / Kubernetes · Fukuoka, Japan (JST), open to remote"
 ---
 
 # Christian Prentice
